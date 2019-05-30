@@ -1,5 +1,5 @@
 class Negyzet():
-    x = []
+    x = 3
 
     def __init__(self, a_oldal:int):
        self.a_oldal = a_oldal
@@ -13,8 +13,8 @@ class Teglalap(Negyzet):
         super().__init__(a_oldal=a_oldal)
         self.b_oldal = b_oldal
 
-
-    def kerulet(self):
+    @staticmethod
+    def kerulet(cls):
         return 2 * (self.a_oldal + self.b_oldal)
 
 n = Negyzet(5)
@@ -24,4 +24,5 @@ t_2 = Teglalap(4, 8)
 
 print(t.x)
 Teglalap.x = 3
+Teglalap.kerulet()
 print(t.x)
